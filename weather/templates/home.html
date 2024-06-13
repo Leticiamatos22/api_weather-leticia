@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <h1 class="text-center my-4">Temperaturas</h1>
+
+    <div class="row justify-content-center">
+        {% for weather in weathers %}
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-dark border-primary">
+                <div class="card-header bg-primary">
+                    <h5 class="card-title">Temperatura: {{ weather.temperature }}°C</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Data: {{ weather.date }} <br />
+                        Cidade: {{ weather.city }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
